@@ -15,6 +15,8 @@ import pychrono.core as chrono
 #import pychrono.irrlicht as chronoirr
 import pychrono.postprocess as postprocess
 
+import pathlib
+
 import errno
 import os
 import importlib.util
@@ -28,10 +30,13 @@ print ("Vibrating Stage Simulation")
 # If running from a different directory, you must change the path to the data directory with: 
 #chrono.SetChronoDataPath('relative/path/to/data/directory/')
 
-bowlpath=r''
+bowlpath=pathlib.Path().resolve()/'bowls'/'spike bowl.obj'
 nx=7
 nz=7
 ny=3
+
+
+
 
 def AddFallingItems(sys):
     # Shared contact materials for falling objects
@@ -111,7 +116,7 @@ def AddContainer(sys):
 #    exported_items = chrono.ImportSolidWorksSystem(chrono.GetChronoDataFile('spline bowl.STEP'))
 
 #    exported_items = chrono.ChBodyEasyMesh('hemisphere bowl.obj',  # x,y,z size
-    exported_items = chrono.ChBodyEasyMesh('/bowls/spike bowl.obj',  # x,y,z size
+    exported_items = chrono.ChBodyEasyMesh(bowlpath,  # x,y,z size
 
                                         4000,      # density
                                         True,      # visualization?
