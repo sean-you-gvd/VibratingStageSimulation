@@ -111,7 +111,7 @@ def AddContainer(sys):
 #    exported_items = chrono.ImportSolidWorksSystem(chrono.GetChronoDataFile('spline bowl.STEP'))
 
 #    exported_items = chrono.ChBodyEasyMesh('hemisphere bowl.obj',  # x,y,z size
-    exported_items = chrono.ChBodyEasyMesh('spike bowl.obj',  # x,y,z size
+    exported_items = chrono.ChBodyEasyMesh('/bowls/spike bowl.obj',  # x,y,z size
 
                                         4000,      # density
                                         True,      # visualization?
